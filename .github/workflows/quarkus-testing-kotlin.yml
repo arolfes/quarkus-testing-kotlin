@@ -1,0 +1,32 @@
+name: Build and test all examples
+
+on:
+  push:
+    branches-ignore:
+      - master
+    paths:
+      - '.github/workflows/quarkus-testing-kotlin.yml'
+      - 'quarkus-*/**'
+      - '!*.md'
+      - '!**/*.md'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - '.github/workflows/quarkus-testing-kotlin.yml'
+      - 'quarkus-*/**'
+      - '!*.md'
+      - '!**/*.md'
+jobs:
+  test:
+    name: build and test all examples
+    runs-on: ubuntu-latest
+    container: openjdk:11-jdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+        working-directory: quarkus-jpa-kotlin
+      - name: quarkus-jpa-kotlin
+        run: ./gradlew clean assemble test
+        working-directory: quarkus-jpa-kotlin
