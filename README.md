@@ -1,3 +1,6 @@
+
+![Build and test all examples](https://github.com/arolfes/quarkus-testing-kotlin/workflows/Build%20and%20test%20all%20examples/badge.svg)
+
 # Quarkus Testing KOTLIN
 
 contains [quarkus](https://quarkus.io) examples for different extensions and how to test them.
