@@ -19,14 +19,20 @@ on:
       - '!**/*.md'
 jobs:
   test:
-    name: build and test all examples
+    name: ${{ matrix.working-dir }}
     runs-on: ubuntu-latest
     container: openjdk:11-jdk
+    strategy:
+      fail-fast: false
+      matrix:
+        working-dir:
+          - 'quarkus-jpa-kotlin'
+          - 'quarkus-mongodb-kotlin'
     steps:
       - uses: actions/checkout@v2
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-        working-directory: quarkus-jpa-kotlin
-      - name: quarkus-jpa-kotlin
+        working-directory: ${{ matrix.working-dir }}
+      - name: clean assemble test
         run: ./gradlew clean assemble test
-        working-directory: quarkus-jpa-kotlin
+        working-directory: ${{ matrix.working-dir }}
