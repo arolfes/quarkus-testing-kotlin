@@ -12,12 +12,15 @@ inspired by [Workshop: Cloud Native Testing](https://github.com/nt-ca-aqe/ws-clo
 * [`quarkus-jpa-kotlin`](quarkus-jpa-kotlin)
   * quarkus panache repository pattern
   * 3 different ways how to use testcontainers with quarkus
+* [`quarkus-mongodb-kotlin`](quarkus-mongodb-kotlin)
+  * mongodb testcontainer
 
 Further Reading:
 
 * [Quarkus](https://quarkus.io/get-started/)
 * [Testcontainers](https://www.testcontainers.org/)
 * [JUnit 5 User Guide](https://junit.org/junit5/docs/current/user-guide/)
+* [flapdoodle mongodb](https://github.com/flapdoodle-oss/de.flapdoodle.embed.mongo)
 
 
 ### creating projects
