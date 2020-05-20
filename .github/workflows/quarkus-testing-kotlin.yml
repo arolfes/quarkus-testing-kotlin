@@ -28,6 +28,7 @@ jobs:
         working-dir:
           - 'quarkus-jpa-kotlin'
           - 'quarkus-mongodb-kotlin'
+          - 'quarkus-web-kotlin'
     steps:
       - uses: actions/checkout@v2
       - name: Grant execute permission for gradlew
