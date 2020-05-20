@@ -18,3 +18,15 @@ in application.properties are 3 properties defined which are only used on test s
 # leads to a Postgres DB Container
 %test.quarkus.datasource.url=jdbc:tc:postgresql:latest:///dbname
 ```
+
+### creating projects
+
+```
+mvn io.quarkus:quarkus-maven-plugin:1.4.1.Final:create \
+    -DprojectGroupId=de.novatec.aqe.cloud \
+    -DprojectArtifactId=quarkus-jpa-kotlin \
+    -DprojectVersion=1.0.0-SNAPSHOT \
+    -DclassName="jpa.Application" \
+    -Dextensions="kotlin,hibernate-orm-panache,jdbc-postgresql,flyway" \
+    -DbuildTool=gradle
+```

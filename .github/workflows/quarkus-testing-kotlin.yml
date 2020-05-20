@@ -28,11 +28,15 @@ jobs:
         working-dir:
           - 'quarkus-jpa-kotlin'
           - 'quarkus-mongodb-kotlin'
+          - 'quarkus-web-kotlin'
     steps:
       - uses: actions/checkout@v2
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
         working-directory: ${{ matrix.working-dir }}
-      - name: clean assemble test
-        run: ./gradlew clean assemble test
+      - name: assemble ${{ matrix.working-dir }}
+        run: ./gradlew assemble
+        working-directory: ${{ matrix.working-dir }}
+      - name: test ${{ matrix.working-dir }}
+        run: ./gradlew test
         working-directory: ${{ matrix.working-dir }}
